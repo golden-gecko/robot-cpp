@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.2)
 
-project(Robot)
+project(robot)
 
 # Include files
 # include_directories("D:/Dev/boost_1_55_0")
@@ -11,10 +11,10 @@ project(Robot)
 # link_directories("D:/Dev/boost_1_55_0/stage/lib")
 
 # Source files
-add_executable(Robot Input.hpp Main.cpp Window.hpp)
+add_executable(robot Input.hpp Main.cpp Window.hpp)
 
 # Libraries
-target_link_libraries(Robot OIS_static)
+target_link_libraries(robot OIS_static)
 
 # OpenGL
 find_package(OpenGL REQUIRED)
@@ -26,9 +26,9 @@ endif(NOT OPENGL_FOUND)
 include_directories(${OpenGL_INCLUDE_DIRS})
 link_directories(${OpenGL_LIBRARY_DIRS})
 add_definitions(${OpenGL_DEFINITIONS})
-target_link_libraries(Robot ${OPENGL_LIBRARIES})
+target_link_libraries(robot ${OPENGL_LIBRARIES})
 
-set_target_properties(Robot PROPERTIES
+set_target_properties(robot PROPERTIES
     CXX_EXTENSIONS NO
     CXX_STANDARD 23
     CXX_STANDARD_REQUIRED YES
